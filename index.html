@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorry My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#050505,#0d0d0d,#1d0a16);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    position:relative;
+}
+
+/* Welcome Screen */
+
+.welcome-screen{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#000;
+    top:0;
+    left:0;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    animation:fadeOut 3s forwards;
+    animation-delay:3s;
+}
+
+.welcome-screen h1{
+    color:#ff4d88;
+    font-size:55px;
+    text-shadow:0 0 20px rgba(255,0,98,0.7);
+}
+
+.welcome-screen p{
+    color:white;
+    margin-top:15px;
+    font-size:20px;
+}
+
+@keyframes fadeOut{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+/* Floating Hearts */
+
+.hearts{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    color:rgba(255,0,98,0.8);
+    animation:float 10s linear infinite;
+    font-size:25px;
+}
+
+.hearts span:nth-child(1){ left:10%; animation-duration:8s; }
+.hearts span:nth-child(2){ left:20%; animation-duration:11s; }
+.hearts span:nth-child(3){ left:35%; animation-duration:9s; }
+.hearts span:nth-child(4){ left:50%; animation-duration:13s; }
+.hearts span:nth-child(5){ left:65%; animation-duration:10s; }
+.hearts span:nth-child(6){ left:80%; animation-duration:14s; }
+.hearts span:nth-child(7){ left:90%; animation-duration:12s; }
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Stars */
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:0;
+    overflow:hidden;
+}
+
+.stars span{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0.2;
+    }
+}
+
+/* Blur Glow */
+
+.blur1,
+.blur2{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(100px);
+    z-index:0;
+}
+
+.blur1{
+    width:300px;
+    height:300px;
+    background:#ff0066;
+    top:10%;
+    left:-100px;
+}
+
+.blur2{
+    width:300px;
+    height:300px;
+    background:#ff4da6;
+    bottom:10%;
+    right:-100px;
+}
+
+/* Main Container */
+
+.container{
+
+    position:relative;
+    z-index:10;
+    width:100%;
+    max-width:950px;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 25px rgba(255,0,98,0.4),
+    0 0 60px rgba(255,0,98,0.2),
+    0 0 100px rgba(255,0,98,0.1);
+
+    animation:fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.title{
+
+    font-size:55px;
+
+    color:#ff2d75;
+
+    margin-bottom:10px;
+
+    text-shadow:0 0 20px rgba(255,0,98,0.6);
+}
+
+/* Typing Text */
+
+.typing-text{
+
+    font-size:22px;
+
+    color:#ff4d88;
+
+    margin-bottom:25px;
+
+    min-height:40px;
+
+    font-weight:600;
+
+    text-shadow:0 0 10px rgba(255,0,98,0.5);
+}
+
+.subtitle{
+
+    color:#f1f1f1;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:30px;
+}
+
+/* Slideshow */
+
+.slideshow{
+
+    margin-bottom:25px;
+}
+
+.slideshow img{
+
+    width:100%;
+
+    height:500px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:2px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 0 30px rgba(255,0,98,0.3);
+
+    transition:1s;
+}
+
+/* Gallery */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:18px;
+
+    margin-bottom:35px;
+}
+
+.gallery img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:0.5s;
+
+    border:2px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.5);
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px rgba(255,0,98,0.4);
+}
+
+/* Box Design */
+
+.sorry-box,
+.love-box,
+.letter{
+
+    background:rgba(255,255,255,0.05);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.love-box{
+
+    background:linear-gradient(135deg,#2a0817,#13070d);
+}
+
+.sorry-box h2,
+.love-box h2,
+.letter h2{
+
+    color:#ff4d88;
+
+    font-size:34px;
+
+    margin-bottom:20px;
+}
+
+.sorry-lines,
+.love-lines,
+.letter p{
+
+    color:#f2f2f2;
+
+    line-height:2;
+
+    font-size:18px;
+}
+
+.highlight{
+
+    color:#ff4d88;
+
+    font-weight:700;
+}
+
+/* Heart Animation */
+
+.heart{
+
+    margin-top:25px;
+
+    font-size:50px;
+
+    color:#ff2d75;
+
+    animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%{ transform:scale(1); }
+    25%{ transform:scale(1.2); }
+    50%{ transform:scale(1); }
+    75%{ transform:scale(1.2); }
+    100%{ transform:scale(1); }
+}
+
+/* Love Button */
+
+.love-btn{
+
+    margin-top:25px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#ff2d75,#ff6ba0);
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    box-shadow:0 0 20px rgba(255,0,98,0.5);
+}
+
+.love-btn:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 35px rgba(255,0,98,0.8);
+}
+
+/* Love Timer */
+
+.timer{
+
+    margin-top:25px;
+
+    color:#ff77a8;
+
+    font-size:22px;
+
+    font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .container{
+        padding:22px;
+    }
+
+    .title{
+        font-size:36px;
+    }
+
+    .typing-text{
+        font-size:18px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+
+    .slideshow img{
+        height:320px;
+    }
+
+    .gallery img{
+        height:180px;
+    }
+
+    .sorry-box h2,
+    .love-box h2,
+    .letter h2{
+        font-size:26px;
+    }
+
+    .sorry-lines,
+    .love-lines,
+    .letter p{
+        font-size:15px;
+    }
+
+    .timer{
+        font-size:18px;
+    }
+
+    .welcome-screen h1{
+        font-size:34px;
+    }
+
+    .welcome-screen p{
+        font-size:16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Welcome Screen -->
+
+<div class="welcome-screen">
+
+<h1>For My Pillu ❤️</h1>
+
+<p>Someone Very Special...</p>
+
+</div>
+
+<!-- Stars -->
+
+<div class="stars"></div>
+
+<!-- Glow -->
+
+<div class="blur1"></div>
+<div class="blur2"></div>
+
+<!-- Floating Hearts -->
+
+<div class="hearts">
+
+<span>❤️</span>
+<span>❤️</span>
+<span>❤️</span>
+<span>❤️</span>
+<span>❤️</span>
+<span>❤️</span>
+<span>❤️</span>
+
+</div>
+
+<!-- Music -->
+
+<audio id="bgMusic" autoplay loop>
+
+<source src="song.mp3" type="audio/mp3">
+
+</audio>
+
+<!-- Main Container -->
+
+<div class="container">
+
+<h1 class="title">I'm Really Sorry n Pillu 🥺❤️</h1>
+
+<div class="typing-text" id="typing"></div>
+
+<p class="subtitle">
+
+बाळा... मला माहिती आहे की मी तुला दुखावलं आहे... 💔  
+पण खरंच, माझं हृदय फक्त तुझ्यासाठीच धडधडतं...  
+तुझं माझ्यावर नाराज असणं मला आतून पूर्णपणे तोडून टाकतं... ❤️
+
+</p>
+
+<!-- Slideshow -->
+
+<div class="slideshow">
+
+<img id="slide" src="img1.jpeg">
+
+</div>
+
+<!-- Gallery -->
+
+<div class="gallery">
+
+<img src="img1.jpeg">
+<img src="img2.jpeg">
+<img src="img3.jpeg">
+<img src="img4.jpeg">
+
+</div>
+
+<!-- Sorry Box -->
+
+<div class="sorry-box">
+
+<h2>Sorry na bala 🥺</h2>
+
+<div class="sorry-lines">
+
+"तू माझ्याशी बोलत नाहीस ना...  
+तेव्हा पूर्ण दिवस रिकामा वाटतो..." ❤️
+
+<br><br>
+
+"तुझ्या डोळ्यांमध्ये माझ्यासाठी राग पाहून  
+खरंच मन तुटून जातं..." 💔
+
+<br><br>
+
+"मी चुकीचा असू शकतो...  
+पण माझं तुझ्यावरचं प्रेम कधीच चुकीचं नाही..." 🥺
+
+<br><br>
+
+"प्लीज एकदा हस ना...  
+तुझं हसूच माझी दुनिया आहे..." ❤️
+
+<br><br>
+
+"तू दूर गेलीस की असं वाटतं  
+माझे श्वासही अपुरे झाले..." 💔
+
+</div>
+
+</div>
+
+<!-- Love Box -->
+
+<div class="love-box">
+
+<h2>फक्त तूच ❤️</h2>
+
+<div class="love-lines">
+
+"जर तूच बदललीस ना...  
+तर मी जगूच शकणार नाही..." 💔
+
+<br><br>
+
+"तू माझी सवय नाहीस...  
+तू माझं संपूर्ण आयुष्य आहेस..." ❤️
+
+<br><br>
+
+"मला जगातील काहीच नको...  
+फक्त प्रत्येक जन्मी तुझा साथ हवा..." ✨
+
+<br><br>
+
+"माझ्या प्रत्येक प्रार्थनेत फक्त तूच असतेस...  
+आणि प्रत्येक धडधडीतही..." ❤️
+
+<br><br>
+
+<span class="highlight">
+
+"मी तुझ्यावर जगातील कोणत्याही गोष्टीपेक्षा जास्त प्रेम करतो..."
+
+</span>
+
+</div>
+
+<div class="heart">❤️</div>
+
+<div class="timer" id="loveTimer"></div>
+
+</div>
+
+<!-- Letter -->
+
+<div class="letter">
+
+<h2>एक छोटंसं पत्र तुझ्यासाठी 💌</h2>
+
+<p>
+
+मला माहिती नाही मी तुझ्यासाठी किती special आहे...  
+पण तू माझ्यासाठी पूर्ण जग आहेस... ❤️
+
+तुझ्यासोबत असताना प्रत्येक क्षण सुंदर वाटतो...  
+आणि तू नाराज असलीस की सगळंच रिकामं वाटतं... 💔
+
+मी perfect नाही...  
+पण एक गोष्ट कायम खरी राहील —
+
+मी तुझ्यावर खूप प्रेम करतो...  
+आजही... उद्याही... आणि कायमच... ❤️✨
+
+</p>
+
+<button class="love-btn">
+
+Forever Yours ❤️
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* AUTO MUSIC */
+
+window.addEventListener('load', () => {
+
+const music = document.getElementById("bgMusic");
+
+music.play().catch(() => {
+
+document.body.addEventListener('click', () => {
+
+music.play();
+
+}, { once:true });
+
+});
+
+});
+
+/* Typing Effect */
+
+const text =
+"तुझ्याशिवाय माझं आयुष्य अपूर्ण आहे... ❤️";
+
+let i = 0;
+
+function typing(){
+
+if(i < text.length){
+
+document.getElementById("typing").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}
+
+}
+
+typing();
+
+/* Slideshow */
+
+const images = [
+
+"img1.jpeg",
+"img2.jpeg",
+"img3.jpeg",
+"img4.jpeg"
+
+];
+
+let index = 0;
+
+setInterval(() => {
+
+index = (index + 1) % images.length;
+
+document.getElementById("slide").src = images[index];
+
+},3000);
+
+/* Love Timer */
+
+const startDate = new Date("2024-01-01");
+
+const today = new Date();
+
+const diff = today - startDate;
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+document.getElementById("loveTimer").innerHTML =
+days + " Days Together ❤️";
+
+/* Random Stars */
+
+const starsContainer = document.querySelector(".stars");
+
+for(let i=0;i<80;i++){
+
+const star = document.createElement("span");
+
+star.style.top = Math.random()*100 + "%";
+
+star.style.left = Math.random()*100 + "%";
+
+star.style.animationDuration =
+(Math.random()*3+2) + "s";
+
+starsContainer.appendChild(star);
+
+}
+
+</script>
+
+</body>
+</html>
